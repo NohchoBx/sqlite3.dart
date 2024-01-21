@@ -25,7 +25,7 @@ public class Sqlite3FlutterLibsPlugin implements FlutterPlugin {
       public void onMethodCall(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
         try {
           System.loadLibrary("sqlite3");
-          System.loadLibrary("libdistlib");
+          System.loadLibrary("distlib");
           result.success(null);
         } catch (Throwable e) {
           result.error(e.toString(), null, null);
