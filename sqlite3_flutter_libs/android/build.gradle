@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.1'
+        classpath 'com.android.tools.build:gradle:8.2.1'
     }
 }
 
@@ -17,14 +17,27 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 32
+    ndkVersion "26.1.10909125"
 
     // Conditional for compatibility with AGP <4.2.
     if (project.android.hasProperty("namespace")) {
         namespace 'eu.simonbinder.sqlite3_flutter_libs'
     }
 
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
+        externalNativeBuild {
+            ndkBuild {
+                arguments '-C src/main/jni'
+                cppFlags "-std=c++11"
+            }
+        }
     }
     lintOptions {
         disable 'InvalidPackage'

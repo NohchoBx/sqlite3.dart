@@ -26,6 +26,7 @@ Future<void> applyWorkaroundToOpenSqlite3OnOldAndroidVersions() async {
 
   try {
     DynamicLibrary.open('libsqlite3.so');
+    DynamicLibrary.open('libjaro_winkler.so');
   } on ArgumentError {
     // Ok, the regular approach failed. Try to open sqlite3 in Java, which seems
     // to fix the problem.
@@ -33,5 +34,6 @@ Future<void> applyWorkaroundToOpenSqlite3OnOldAndroidVersions() async {
 
     // Try again. If it still fails we're out of luck.
     DynamicLibrary.open('libsqlite3.so');
+    DynamicLibrary.open('libjaro_winkler.so');
   }
 }
