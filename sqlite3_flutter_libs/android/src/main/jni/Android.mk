@@ -13,8 +13,16 @@ endif
 
 LOCAL_CPPFLAGS += -std=c++11
 
-LOCAL_MODULE := jaroWinkler
-LOCAL_SRC_FILES := jaroWinkler.cpp utf8_unicode.cpp
+LOCAL_MODULE := distlib
+LOCAL_SRC_FILES := \
+    jaroWinkler.cpp \
+    pylcs.cpp \
+    dldist.cpp \
+    lcsubstr.cpp \
+    perm.cpp \
+    subseq.cpp \
+    RegistExt.cpp \
+    utf8_unicode.cpp
 
 LOCAL_C_INCLUDES += $(LOCAL_PATH)
 
