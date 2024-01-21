@@ -26,8 +26,11 @@ public class Sqlite3FlutterLibsPlugin implements FlutterPlugin {
         try {
           System.loadLibrary("sqlite3");
           System.loadLibrary("distlib");
+          System.out.println("Success");
+
           result.success(null);
         } catch (Throwable e) {
+          System.out.println("errrooor" + e.toString());
           result.error(e.toString(), null, null);
         }
       }
