@@ -28,6 +28,7 @@ Future<void> applyWorkaroundToOpenSqlCipherOnOldAndroidVersions() async {
 
   try {
     DynamicLibrary.open('libsqlcipher.so');
+    DynamicLibrary.open('libdistlib.so');
   } on ArgumentError {
     // Ok, the regular approach failed. Try to open sqlite3 in Java, which seems
     // to fix the problem.
@@ -35,6 +36,7 @@ Future<void> applyWorkaroundToOpenSqlCipherOnOldAndroidVersions() async {
 
     // Try again. If it still fails we're out of luck.
     DynamicLibrary.open('libsqlcipher.so');
+    DynamicLibrary.open('libdistlib.so');
   }
 }
 
