@@ -18,7 +18,7 @@ A new flutter plugin project.
   s.dependency 'Flutter'
 
   s.dependency 'SQLCipher', '~> 4.5.5'
-  s.dependency 'sqlite3_distlib'
+  s.dependency 'distlib'
 
   s.platform = :ios, '11.0'
 
