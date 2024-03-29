@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'sqlcipher_flutter_libs'
-  s.version          = '0.0.1'
+  s.version          = '0.0.7'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC
 A new flutter plugin project.
@@ -18,7 +18,7 @@ A new flutter plugin project.
   s.dependency 'Flutter'
 
   s.dependency 'SQLCipher', '~> 4.5.5'
-  s.dependency 'sqlite3_distlib', '0.0.1'
+  s.dependency 'sqlite3_distlib', '0.1.1'
 
   s.platform = :ios, '11.0'
 
